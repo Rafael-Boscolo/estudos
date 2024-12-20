@@ -1,0 +1,10 @@
+# Como Funciona as Datas no PHP:
+
+A dara no PHP funciona em milesegundos, mas o ideal é quando for precisar utilizar a data 
+entrar na documentação do PHP para verificar o formato que deseja.
+
+Link: https://www.php.net/manual/pt_BR/function.date.php
+
+Link: https://www.php.net/manual/pt_BR/datetime.format.php
+
+O padrão mundial de salvar data é: Ano / Mês / Dia.
