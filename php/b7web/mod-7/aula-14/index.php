@@ -1,17 +1,14 @@
 
-<h3>Conceito de CRUD:</h3><hr/>
+<h3>Conceito de DAO:</h3><hr/>
 <link rel="stylesheet" href="styles/index.css">
 
 
 <?php
 require_once('Config.php');
+require_once('dao/UsuarioDaoMysql.php');
 
-$lista = [];
-$sql = $pdo->query('SELECT * FROM usuarios');
-
-if($sql->rowCount() > 0) {
-    $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
-}
+$usuarioDao = new UsuarioDaoMysql($pdo);
+$lista = $usuarioDao->findAll();
 ?>
 
 <table border="1">
@@ -23,12 +20,12 @@ if($sql->rowCount() > 0) {
     </tr>
     <?php foreach($lista as $usuario): ?>
         <tr>
-            <td><?=$usuario['id']; ?></td>
-            <td><?=$usuario['name']; ?></td>
-            <td><?=$usuario['email']; ?></td>
+            <td><?=$usuario->getId(); ?></td>
+            <td><?=$usuario->getName(); ?></td>
+            <td><?=$usuario->getEmail(); ?></td>
             <td>
-                <button><a href="editar/editar.php?id=<?=$usuario['id'];?>">Editar</a></button>
-                <button><a href="deletar/deletar.php?id=<?=$usuario['id'];?>" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a></button>
+                <button><a href="editar/editar.php?id=<?=$usuario->getId();?>">Editar</a></button>
+                <button><a href="deletar/deletar.php?id=<?=$usuario->getId();?>" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a></button>
             </td>
         </tr>
     <?php endforeach; ?>
