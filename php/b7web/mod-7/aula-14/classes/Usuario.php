@@ -22,13 +22,14 @@ class Usuario {
         return $this->email;
     }
     public function setEmail($e) {
-        $this->name = strtolower(trim($e));
+        $this->email = strtolower(trim($e));
     }
 }
 
 interface UsuarioDAO {
-    public function create(Usuario $u);
+    public function add(Usuario $u);
     public function findAll();
+    public function findByEmail($email);
     public function findById($id);
     public function update(Usuario $u);
     public function delete($id);
