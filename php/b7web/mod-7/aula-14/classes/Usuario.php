@@ -26,6 +26,7 @@ class Usuario {
     }
 }
 
+// INTERFACE
 interface UsuarioDAO {
     public function add(Usuario $u);
     public function findAll();

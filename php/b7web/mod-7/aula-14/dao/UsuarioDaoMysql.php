@@ -4,7 +4,7 @@ require_once __DIR__."\\..\\classes\\Usuario.php";
 class UsuarioDaoMysql implements UsuarioDAO {
     private $pdo;
 
-    public function __construct(PDO $drive) {
+    public function __construct(PDO $drive) { 
         $this->pdo = $drive;
     }
 
@@ -26,12 +26,13 @@ class UsuarioDaoMysql implements UsuarioDAO {
         if($sql->rowCount()>0) {
             $data = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+            
             foreach($data as $item) {
                 $u = new Usuario();
                 $u->setId($item['id']);
                 $u->setName($item['name']);
                 $u->setEmail($item['email']);
-
+                
                 $array[] = $u;
             }
         }

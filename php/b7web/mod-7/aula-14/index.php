@@ -2,7 +2,6 @@
 <h3>Conceito de DAO:</h3><hr/>
 <link rel="stylesheet" href="styles/index.css">
 
-
 <?php
 require_once('Config.php');
 require_once('dao/UsuarioDaoMysql.php');
