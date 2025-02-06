@@ -8,12 +8,12 @@ class UsuarioDaoMysql implements UsuarioDAO {
         $this->pdo = $drive;
     }
 
+    // Adicionar usuário ao Banco de Dados
     public function add(Usuario $u) {
         $sql = $this->pdo->prepare('INSERT INTO usuarios (name, email) VALUES (:name, :email)');
         $sql->bindValue(':name', $u->getName());
         $sql->bindValue(':email', $u->getEmail());
         $sql->execute();
-
 
         $u->setId($this->pdo->lastInsertId());
         return $u;
@@ -46,13 +46,13 @@ class UsuarioDaoMysql implements UsuarioDAO {
         $sql->execute();
 
         if($sql->rowCount() > 0) {
-            $data = $sql->fetch();
+            $data = $sql->fetch(PDO::FETCH_ASSOC);
 
             $u = new Usuario();
             $u->setId($data['id']);
             $u->setName($data['name']);
             $u->setEmail($data['email']);
-
+            
             return $u;
 
         } else {
@@ -62,11 +62,34 @@ class UsuarioDaoMysql implements UsuarioDAO {
     } 
     
     public function findById($id) {
+        $sql = $this->pdo->prepare('SELECT * FROM usuarios WHERE id = :id');
+        $sql->bindValue(':id', $id);
+        $sql->execute();
 
+        if($sql->rowCount() > 0) {
+            $data = $sql->fetch(PDO::FETCH_ASSOC);
+
+            $u = new Usuario();
+            $u->setId($data['id']);
+            $u->setName($data['name']);
+            $u->setEmail($data['email']);
+            
+            return $u;
+
+        } else {
+            return false;
+        }
     }
     
     public function update(Usuario $u) {
 
+        $sql = $this->pdo->prepare('UPDATE usuarios SET name=:name, email=:email WHERE id=:id');
+        $sql->bindValue(':name', $u->getName());
+        $sql->bindValue(':email', $u->getEmail());
+        $sql->bindValue(':id', $u->getId());
+        $sql->execute();
+
+        return true;
     }
     
     public function delete($id) {

@@ -7,6 +7,7 @@ require_once('Config.php');
 require_once('dao/UsuarioDaoMysql.php');
 
 $usuarioDao = new UsuarioDaoMysql($pdo);
+
 $lista = $usuarioDao->findAll();
 ?>
 
