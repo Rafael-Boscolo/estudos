@@ -18,22 +18,5 @@
         "titleBar.inactiveBackground": "#21573299",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#215732",
-
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.sideBar.location": "right",
-
-    "editor.fontSize": 15,
-    "editor.fontFamily": "'Fira Code'",
-    "editor.fontLigatures": true,
-    "editor.letterSpacing": 0.5,
-    "editor.lineHeight": 20,
-    "editor.autoIndent": "advanced",
-    "editor.snippetSuggestions": "bottom",
-
-    "intelephense.format.enable": true,
-    "intelephense.completion.triggerParameterHints": true,
-    "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
-    "intelephense.completion.insertUseDeclaration": true,
-    "intelephense.trace.server": "messages",
+    "peacock.color": "#215732"
 }

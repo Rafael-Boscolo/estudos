@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.responsive-pai {
+  display: flex;
+  gap: 1rem;
+}
+
+.responsive-filho1 {
+  width: 600px;
+  height: 300px;
+  background: blue;
+}
+
+.responsive-filho2 {
+  width: 600px;
+  height: 300px;
+  background: green;
+}
+
+.responsive-filho3 {
+  width: 600px;
+  height: 300px;
+  background: red;
+}
+
+.responsive-filho4 {
+  width: 600px;
+  height: 300px;
+  background: black;
+  display: none;
+}
+
+
+/* @media > com condição lógica a sintaxe fica "@media only screen and (<parametro>) {}" */
+/* @media > sem condição lógica a sintaxe fica "@media (<parametro>) {}" */
+
+@media only screen and (max-width: 600px) {
+
+  .responsive-pai {
+    display: block;
+  }
+
+  .responsive-filho1 {
+    width: 300px;
+    height: 200px;
+    background: blue;
+    float: left;
+    transition: 2s;
+  }
+  
+  .responsive-filho2 {
+    width: 300px;
+    height: 200px;
+    background: green;
+    float: right;
+    transition: 2s;
+  }
+  
+  .responsive-filho3 {
+    width: 300px;
+    height: 200px;
+    background: red;
+    float: left;
+    transition: 2s;
+  }
+
+  .responsive-filho4 {
+    width: 300px;
+    height: 200px;
+    background: black;
+    float: right;
+    display: block;
+    transition: 2s;
+  }
+
+}

@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+
+p {
+  padding: 10px;
+}
+
+h3 {
+  padding-left: 10px;
+}
+
+.topo {
+  background-color: #fbbf24;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 100px;
+  height: 100px;
+}
+
+.cidade {
+  width: 25%;
+  float: left;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+
+  .cidade {
+    width: 50%;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+  .cidade {
+    width: 100%;
+  }
+
+}

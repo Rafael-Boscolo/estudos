@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: blueviolet;
+
+  /* Conteudo dentro da <div> */
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.pai {
+  display: flex;
+}
+
+.div {
+  background-color: #b91c1c;
+}
+
+.div2 {
+  background-color: #22c55e;
+}
+
+.div3 {
+  background-color: #1d4ed8;
+}
+
+.div, .div2, .div3 {
+  width: 300px;
+  height: 300px;
+  border-radius: 2px;
+  width: 100%;
+  text-transform: lowercase;
+}
+
+.menu {
+  width:200px;
+  height: 300px;
+  background-color: #fbbf24;
+  float: left;
+  text-transform: uppercase;
+}
+
+.conteudo {
+  width:300px;
+  height: 300px;
+  background-color: #6d28d9;
+  float: right;
+  text-transform: uppercase;
+}
